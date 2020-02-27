@@ -1,15 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Irakli Jani`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Irakli Janiashvili`,
+      social: {
+        twitter: `IrakliJani`,
+      },
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Irakli Jani's Personal Website`,
+    siteUrl: `https://iraklijani.com/`,
   },
   plugins: [
     {
@@ -53,15 +52,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
+        //TODO: trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
+      // TODO: test this...
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `Irakli Jani's Blog`,
+        short_name: `IrakliJani.`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
@@ -70,6 +70,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    // TODO: get rid of this...
     {
       resolve: `gatsby-plugin-typography`,
       options: {
