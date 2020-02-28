@@ -11,23 +11,7 @@ import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author {
-              social {
-                twitter
-              }
-            }
-          }
-        }
-      }
-    `,
-  )
+  const { site } = useStaticQuery(SITE_QUERY)
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -88,5 +72,21 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
+
+const SITE_QUERY = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        description
+        author {
+          social {
+            twitter
+          }
+        }
+      }
+    }
+  }
+`
 
 export default SEO
