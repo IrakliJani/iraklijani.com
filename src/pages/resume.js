@@ -12,8 +12,6 @@ const ResumeIndex = ({ data, location }) => {
   const jobs = data.allJobsJson.nodes
   const educations = data.allEducationJson.nodes
 
-  console.log(educations)
-
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="Résumé" />
