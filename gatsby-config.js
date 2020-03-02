@@ -3,21 +3,35 @@ module.exports = {
     title: "Irakli Jani",
     author: {
       name: "Irakli Janiashvili",
-      title: "Full-stack Software Engineer",
+      title: "Full-Stack Software Engineer",
       bio: `Hey 👋, I’m Irakli, software engineer from Tbilisi, Georgia. I have 7 years of experience working on scalable web and mobile apps for EU, US and Georgian companies. Looking forward to joining a team of talented people.`,
+      email: "hey@iraklijani.com",
+      phone: "+995 (514) 111-001",
       social: {
-        twitter: "IrakliJani",
+        twitter: "https://twitter.com/IrakliJani",
+        linkedin: "https://linkedin.com/in/IrakliJani",
+        github: "https://github.com/IrakliJani",
       },
     },
     description: "Irakli Jani's Personal Website",
     siteUrl: "https://iraklijani.com/",
   },
   plugins: [
+    "gatsby-transformer-json",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content/blog`,
         name: "blog",
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/resume`,
+        name: "resume",
       },
     },
     {
@@ -49,8 +63,6 @@ module.exports = {
         ],
       },
     },
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {
@@ -58,7 +70,6 @@ module.exports = {
       },
     },
     "gatsby-plugin-feed",
-    "gatsby-plugin-emotion",
     {
       resolve: "gatsby-plugin-manifest",
       // TODO: test this...
@@ -73,6 +84,7 @@ module.exports = {
       },
     },
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-emotion",
     "gatsby-plugin-theme-ui",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

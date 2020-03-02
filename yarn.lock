@@ -5849,6 +5849,14 @@ gatsby-telemetry@^1.1.47:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
+gatsby-transformer-json@^2.2.26:
+  version "2.2.26"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-json/-/gatsby-transformer-json-2.2.26.tgz#28e8e9f31aae65a230b10156dada9a62c6536ce7"
+  integrity sha512-JpjeL44AbUxA7gnTxVWd+F6IgGIKE8stFywg1ZLn7bbSHKpKUatN6UXw7PSZDac+9aSaDTEAqWFhOX/z3BqE3Q==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    bluebird "^3.7.2"
+
 gatsby-transformer-remark@^2.6.48:
   version "2.6.48"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.6.48.tgz#a37df4be05650371804833aa2011374771e7a39e"
@@ -9735,6 +9743,13 @@ pnp-webpack-plugin@^1.5.0:
   integrity sha512-jd9olUr9D7do+RN8Wspzhpxhgp1n6Vd0NtQ4SFkmIACZoEL1nkyAdW9Ygrinjec0vgDcWjscFQQ1gDW8rsfKTg==
   dependencies:
     ts-pnp "^1.1.2"
+
+polished@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.4.4.tgz#ac8cd6e704887398f3b802718f9d389b9ea4307b"
+  integrity sha512-x9PKeExyI9AhWrJP3Q57I1k7GInujjiVBJMPFmycj9hX1yCOo/X9eu9eZwxgOziiXge3WbFQ5XOmkzunOntBSA==
+  dependencies:
+    "@babel/runtime" "^7.6.3"
 
 portfinder@^1.0.25:
   version "1.0.25"

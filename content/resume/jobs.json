@@ -1,0 +1,50 @@
+[
+  {
+    "logo": "./logos/shogun.png",
+    "title": "Shogun (YC W18)",
+    "website": "https://getshogun.com",
+    "role": "Software Engineer",
+    "type": "Remote",
+    "hq": "San Francisco, US",
+    "startDate": "August 2017",
+    "endDate": "July 2019",
+    "description": "I joined Shogun as the first software engineer and during my time in the company I had an opportunity to work on many valuable features and improvements. Shogun was accepted to the \"YCombinator\" and had huge growth.",
+    "skills": ["TypeScript", "React", "GraphQL", "Ruby on Rails", "PostgreSQL", "MongoDB"]
+  },
+  {
+    "logo": "./logos/dc.png",
+    "title": "Digital Clipboard (Microsoft Scale-Up London)",
+    "website": "https://digitalclipboard.com",
+    "role": "Software Engineer",
+    "type": "Remote",
+    "hq": "London, UK",
+    "startDate": "January 2015",
+    "endDate": "July 2017",
+    "description": "While working at Digital Clipboard I led the creation of a new React Native project with faster UI interactions, scalable frontend architecture and data synchronization layer. Digital Clipboard joined \"Microsoft Scale-Up London\" accelerator and launched.",
+    "skills": ["React Native", "Angular", "Cordova", "Ruby on Rails", "PostgreSQL"]
+  },
+  {
+    "logo": "./logos/spacelab.png",
+    "title": "Spacelab",
+    "website": "https://spacelab.ge",
+    "role": "Co-founder",
+    "type": "On-site",
+    "hq": "Tbilisi, Georgia",
+    "startDate": "August 2013",
+    "endDate": "July 2016",
+    "description": "Spacelab is a digital agency that my friends and I co-founded in Tbilisi, Georgia. We connect to clients all over the world offering mobile/web app development and UI/UX design work. We’ve been lucky to work on numerous interesting projects as a team.",
+    "skills": ["React", "React Native", "Node.js", "Ruby on Rails", "PostgreSQL", "MongoDB"]
+  },
+  {
+    "logo": "./logos/moh.png",
+    "title": "Ministry of Labour, Health and Social Affairs of Georgia",
+    "website": "https://moh.gov.ge",
+    "role": "Software Engineer",
+    "type": "On-site",
+    "hq": "Tbilisi, Georgia",
+    "startDate": "August 2012",
+    "endDate": "July 2013",
+    "description": "My team was accountable to implement digital solutions for the ongoing Health Insurance reform to provide free health care for every citizen of Georgia. I enhanced existing reporting tools and wrote software to process and analyze terabytes of streaming data.",
+    "skills": ["C#", "Node.js", "MsSQL", "EventStore", "Apache", "Hadoop", "Microservices"]
+  }
+]

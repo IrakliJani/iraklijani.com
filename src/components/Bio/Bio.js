@@ -11,13 +11,13 @@ import { Flex, Box, Heading, Text } from "rebass"
 
 import Avatar from "./../Avatar"
 
-const Bio = () => {
+const Bio = ({ ...boxProps }) => {
   const data = useStaticQuery(BIO_QUERY)
 
   const { author } = data.site.siteMetadata
 
   return (
-    <Flex>
+    <Flex {...boxProps}>
       <Box flexShrink={0} mr={5}>
         <Avatar />
       </Box>
