@@ -1,10 +1,3 @@
-/**
- * Bio component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import Image from "gatsby-image"
 import { Flex, Box, Heading, Text, Link as ExternalLink } from "rebass"
@@ -19,7 +12,7 @@ const Job = ({ logo, title, website, role, type, hq, startDate, endDate, descrip
 
       <Box>
         <ExternalLink href={website} target="_blank">
-          <Heading fontSie={4}>{title}</Heading>
+          <Heading fontSize={4}>{title}</Heading>
         </ExternalLink>
 
         <Flex mt={3} color="gray" fontSize={2}>

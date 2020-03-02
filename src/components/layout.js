@@ -1,31 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
 import { Global, css } from "@emotion/core"
 import { Box } from "rebass"
 
-const Layout = ({ title, children }) => {
+const Layout = ({ children }) => {
   return (
     <>
       <Global styles={globalCSS} />
 
       <Box height="3px" backgroundColor="#6273CB" />
 
-      <Box maxWidth="768px" mx="auto" px="3">
-        <header>
-          <h1>
-            <Link style={{}} to={`/`}>
-              {title}
-            </Link>
-          </h1>
-        </header>
+      <Box maxWidth="1190px" mx="auto" px={8} pt={6} fontFamily="body" fontSize={3} color="black">
+        {/* <header>nav...</header> */}
 
         <main>{children}</main>
 
-        <footer>
+        <Box as="footer" py={5}>
           © {new Date().getFullYear()}
           {` `}
           <a href="https://iraklijani.com">iraklijani.com</a>
-        </footer>
+        </Box>
       </Box>
     </>
   )
@@ -33,8 +26,8 @@ const Layout = ({ title, children }) => {
 
 const globalCSS = css`
   html {
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
     background-color: #6273cb;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,

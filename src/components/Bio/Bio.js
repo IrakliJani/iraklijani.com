@@ -18,15 +18,19 @@ const Bio = ({ ...boxProps }) => {
 
   return (
     <Flex {...boxProps}>
-      <Box flexShrink={0} mr={5}>
+      <Box flexShrink={0} mr={6}>
         <Avatar />
       </Box>
 
       <Box>
-        <Heading mb={1}>{author.name}</Heading>
-        <Heading as="h3" mb={5} color="gray">
+        <Heading mb={1} fontSize={6}>
+          {author.name}
+        </Heading>
+
+        <Heading as="h3" mb={5} color="gray" fontFamily="avenirRegular">
           {author.title}
         </Heading>
+
         <Text>{author.bio}</Text>
       </Box>
     </Flex>
