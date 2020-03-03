@@ -8,12 +8,11 @@ import Job from "../components/Job"
 import Education from "../components/Education"
 
 const ResumeIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title
   const jobs = data.allJobsJson.nodes
   const educations = data.allEducationJson.nodes
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <Layout location={location} showFooter={false}>
       <SEO title="Résumé" />
 
       <Bio mb={7} />
@@ -31,11 +30,6 @@ const ResumeIndex = ({ data, location }) => {
 
 export const pageQuery = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allJobsJson {
       nodes {
         title

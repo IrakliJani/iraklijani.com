@@ -2,7 +2,9 @@ import React from "react"
 import { Global, css } from "@emotion/core"
 import { Box } from "rebass"
 
-const Layout = ({ children }) => {
+import Footer from "./../components/Footer"
+
+const Layout = ({ children, showFooter = true }) => {
   return (
     <>
       <Global styles={globalCSS} />
@@ -14,11 +16,7 @@ const Layout = ({ children }) => {
 
         <main>{children}</main>
 
-        <Box as="footer" py={5}>
-          © {new Date().getFullYear()}
-          {` `}
-          <a href="https://iraklijani.com">iraklijani.com</a>
-        </Box>
+        {showFooter && <Footer />}
       </Box>
     </>
   )
