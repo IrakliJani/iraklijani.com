@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { Flex, Box } from "rebass"
 
 import Layout from "../components/layout"
 import Bio from "../components/Bio"
@@ -13,6 +14,8 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description || post.excerpt} />
 
+      <Bio />
+
       <article>
         <header>
           <h1>{post.frontmatter.title}</h1>
@@ -20,32 +23,25 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
         </header>
 
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
-
-        <hr />
-
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
-      <nav>
-        <ul>
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
+      <Flex as="nav" justifyContent="space-between">
+        <Box>
+          {previous && (
+            <Link to={previous.fields.slug} rel="prev">
+              ← {previous.frontmatter.title}
+            </Link>
+          )}
+        </Box>
+
+        <Box>
+          {next && (
+            <Link to={next.fields.slug} rel="next">
+              {next.frontmatter.title} →
+            </Link>
+          )}
+        </Box>
+      </Flex>
     </Layout>
   )
 }
