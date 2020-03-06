@@ -1,0 +1,22 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "HKGrotesk";
+  src: url(../fonts/HKGrotesk/OTF/HKGrotesk-Regular.otf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "HKGrotesk";
+  src: url(../fonts/HKGrotesk/OTF/HKGrotesk-Bold.otf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url(../fonts/SpaceGrotesk/otf/SpaceGrotesk-Bold.otf);
+  font-weight: 600;
+}

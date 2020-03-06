@@ -86,15 +86,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-emotion",
     "gatsby-plugin-theme-ui",
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        monotype: {
-          projectId: "252c4833-7f68-4fdf-b155-b696b385e8e0",
-          loadAllFonts: true,
-        },
-      },
-    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // "gatsby-plugin-offline",

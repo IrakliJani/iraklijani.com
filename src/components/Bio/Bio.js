@@ -17,23 +17,22 @@ const Bio = ({ ...boxProps }) => {
   const { author } = data.site.siteMetadata
 
   return (
-    <Flex {...boxProps}>
-      <Box flexShrink={0} mr={6}>
-        <Avatar />
-      </Box>
+    <Box {...boxProps}>
+      <Flex mb={4}>
+        <Box flexShrink={0} mr={5}>
+          <Avatar />
+        </Box>
+        <Box>
+          <Heading as="h2" fontSize={6}>
+            {author.name}
+          </Heading>
 
-      <Box>
-        <Heading mb={1} fontSize={6}>
-          {author.name}
-        </Heading>
+          <Heading as="h3">{author.title}</Heading>
+        </Box>
+      </Flex>
 
-        <Heading as="h3" mb={5} color="gray" fontFamily="avenirRegular">
-          {author.title}
-        </Heading>
-
-        <Text>{author.bio}</Text>
-      </Box>
-    </Flex>
+      <Text>{author.bio}</Text>
+    </Box>
   )
 }
 
