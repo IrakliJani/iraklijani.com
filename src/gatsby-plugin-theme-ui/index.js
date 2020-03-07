@@ -4,12 +4,13 @@ export default {
     white: "white",
     blueLightest: "#EDF4FA",
     yellowLightest: "#FAF7E8",
+    redLightest: "#FAEDEF",
   },
 
   space: [0, 2, 4, 8, 16, 32, 48, 64, 96],
   sizes: [0, 8, 16, 24, 32, 48, 64, 96, 128, 192],
 
-  fontSizes: [12, 14, 16, 18, 20, 24, 36, 48],
+  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48],
   fonts: {
     heading: "SpaceGrotesk",
     body: "HKGrotesk",
@@ -22,6 +23,7 @@ export default {
     heading: 600,
   },
   lineHeight: {
+    body: "normal",
     heading: "normal",
   },
 

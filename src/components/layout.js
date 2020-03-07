@@ -11,7 +11,7 @@ const Layout = ({ children, showFooter = true }) => {
 
       <Box height="2px" backgroundColor="black" />
 
-      <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" fontSize={3} color="black">
+      <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" lineHeight="body" fontSize={3} color="black">
         {/* TODO: add navbar */}
         {/* <header>nav...</header> */}
 
@@ -31,6 +31,7 @@ const globalCSS = theme => css`
   body {
     background-color: ${theme.colors.white};
     min-height: 100vh;
+    line-height: ${theme.lineHeight.body};
   }
 `
 

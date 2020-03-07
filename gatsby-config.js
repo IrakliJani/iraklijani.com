@@ -4,7 +4,7 @@ module.exports = {
     author: {
       name: "Irakli Janiashvili",
       title: "Full-Stack Software Engineer",
-      bio: `Hey 👋, I’m Irakli, software engineer from Tbilisi, Georgia. I have 7 years of experience working on scalable web and mobile apps for EU, US and Georgian companies. Looking forward to joining a team of talented people.`,
+      bio: `Hey, I’m Irakli, Software Engineer from Tbilisi, Georgia. I have 7 years of experience working on scalable apps for EU, US and Georgian companies On-Site and Remotely. Looking forward to joining a team of talented people.`,
       email: "hey@iraklijani.com",
       phone: "+995 (514) 111-001",
       social: {

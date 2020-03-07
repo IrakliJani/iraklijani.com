@@ -3,7 +3,7 @@ import { Flex, Box, Heading, Text } from "rebass"
 
 const Education = ({ logo, title, location, startDate, endDate, description, ...boxProps }) => {
   return (
-    <Box {...boxProps}>
+    <Box mb={6} {...boxProps}>
       <Heading as="h3" fontSize={5}>
         {title}
       </Heading>

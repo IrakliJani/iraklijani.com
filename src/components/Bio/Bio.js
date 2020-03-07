@@ -9,6 +9,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { Flex, Box, Heading, Text } from "rebass"
 
+import FancyHeading from "./../FancyHeading"
 import Avatar from "./../Avatar"
 
 const Bio = ({ ...boxProps }) => {
@@ -23,9 +24,9 @@ const Bio = ({ ...boxProps }) => {
           <Avatar />
         </Box>
         <Box>
-          <Heading as="h2" fontSize={7}>
+          <FancyHeading as="h2" fontSize={7}>
             {author.name}
-          </Heading>
+          </FancyHeading>
 
           <Heading as="h3" fontSize={5}>
             {author.title}
