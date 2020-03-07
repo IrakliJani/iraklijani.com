@@ -8,7 +8,7 @@
     "hq": "San Francisco, US",
     "startDate": "August 2017",
     "endDate": "July 2019",
-    "description": "I joined Shogun as one of the first engineer and during my time in the company I had an opportunity to work on many core feature implementations. Shogun was accepted to the \"YCombinator W18” and become a successful company.",
+    "description": "I joined Shogun as one of the first engineer and during my time in the company I had an opportunity to work on many core feature implementations. Shogun was accepted to the ”YCombinator W18” and become a successful company.",
     "skills": ["React.js", "Typescript", "Ruby on Rails", "GraphQL", "Postgres", "MongoDB"]
   },
   {
@@ -20,7 +20,7 @@
     "hq": "London, UK",
     "startDate": "January 2015",
     "endDate": "July 2017",
-    "description": "While working at Digital Clipboard I led the creation of a scalable multi-platform frontend project with React Native and smart data synchronization layer. Digital Clipboard launched under \"Microsoft Scale-Up London\" accelerator.",
+    "description": "While working at Digital Clipboard I led the creation of a scalable multi-platform frontend project with React Native and smart data synchronization layer. Digital Clipboard launched under ”Microsoft Scale-Up London” accelerator.",
     "skills": ["React native", "iOS", "Flow", "Cordova", "Angular", "Node.js", "Postgres"]
   },
   {
