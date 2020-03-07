@@ -23,15 +23,17 @@ const Bio = ({ ...boxProps }) => {
           <Avatar />
         </Box>
         <Box>
-          <Heading as="h2" fontSize={6}>
+          <Heading as="h2" fontSize={7}>
             {author.name}
           </Heading>
 
-          <Heading as="h3">{author.title}</Heading>
+          <Heading as="h3" fontSize={5}>
+            {author.title}
+          </Heading>
         </Box>
       </Flex>
 
-      <Text>{author.bio}</Text>
+      <Text fontSize={4}>{author.bio}</Text>
     </Box>
   )
 }

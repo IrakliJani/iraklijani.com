@@ -5,10 +5,6 @@ import { Flex, Box, Heading, Text } from "rebass"
 const Education = ({ logo, title, location, startDate, endDate, description, ...boxProps }) => {
   return (
     <Flex alignItems="center" {...boxProps}>
-      <Box flexShrink={0} mr={5}>
-        <Image fixed={logo.childImageSharp.fixed} />
-      </Box>
-
       <Box>
         <Heading fontSie={4}>{title}</Heading>
 

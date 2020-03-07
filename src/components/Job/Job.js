@@ -1,18 +1,20 @@
 import React from "react"
 import Image from "gatsby-image"
 import { Flex, Box, Heading, Text, Link as ExternalLink } from "rebass"
-import styled from "@emotion/styled"
 
 const Job = ({ logo, title, website, role, type, hq, startDate, endDate, description, skills, ...boxProps }) => {
   return (
     <Flex {...boxProps}>
       <Box flexShrink={0} mr={5}>
-        <StyledImage fixed={logo.childImageSharp.fixed} />
+        <Image fixed={logo.childImageSharp.fixed} />
       </Box>
 
       <Box>
-        <ExternalLink href={website} target="_blank">
-          <Heading fontSize={4}>{title}</Heading>
+        <Heading fontSize={5}>{title}</Heading>
+
+        {/* TODO: external link url */}
+        <ExternalLink href={website} target="_blank" fontSize={1}>
+          {website}
         </ExternalLink>
 
         <Flex mt={3} color="gray" fontSize={2}>
@@ -66,9 +68,5 @@ const Tag = ({ children, ...boxProps }) => {
 const TextSeparator = () => {
   return <Text mx={3}>·</Text>
 }
-
-const StyledImage = styled(Image)`
-  border-radius: 5px;
-`
 
 export default Job

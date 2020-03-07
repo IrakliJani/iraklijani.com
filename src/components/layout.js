@@ -9,9 +9,9 @@ const Layout = ({ children, showFooter = true }) => {
     <>
       <Global styles={globalCSS} />
 
-      <Box height="3px" backgroundColor="#6273CB" />
+      <Box height="3px" backgroundColor="black" />
 
-      <Box maxWidth="1190px" mx="auto" px={8} pt={6} fontFamily="body" fontSize={3} color="black">
+      <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" fontSize={3} color="black">
         {/* <header>nav...</header> */}
 
         <main>{children}</main>
@@ -22,18 +22,13 @@ const Layout = ({ children, showFooter = true }) => {
   )
 }
 
-const globalCSS = css`
+const globalCSS = theme => css`
   html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    background-color: #6273cb;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: ${theme.colors.black};
   }
 
   body {
-    background-color: white;
+    background-color: ${theme.colors.white};
     min-height: 100vh;
   }
 `
