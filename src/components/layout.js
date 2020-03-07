@@ -9,9 +9,10 @@ const Layout = ({ children, showFooter = true }) => {
     <>
       <Global styles={globalCSS} />
 
-      <Box height="3px" backgroundColor="black" />
+      <Box height="2px" backgroundColor="black" />
 
       <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" fontSize={3} color="black">
+        {/* TODO: add navbar */}
         {/* <header>nav...</header> */}
 
         <main>{children}</main>

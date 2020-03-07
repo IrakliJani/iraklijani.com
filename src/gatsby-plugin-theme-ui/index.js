@@ -2,6 +2,8 @@ export default {
   colors: {
     black: "black",
     white: "white",
+    blueLightest: "#EDF4FA",
+    yellowLightest: "#FAF7E8",
   },
 
   space: [0, 2, 4, 8, 16, 32, 48, 64, 96],

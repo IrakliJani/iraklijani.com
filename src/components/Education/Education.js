@@ -1,26 +1,23 @@
 import React from "react"
-import Image from "gatsby-image"
 import { Flex, Box, Heading, Text } from "rebass"
 
 const Education = ({ logo, title, location, startDate, endDate, description, ...boxProps }) => {
   return (
-    <Flex alignItems="center" {...boxProps}>
-      <Box>
-        <Heading fontSie={4}>{title}</Heading>
+    <Box {...boxProps}>
+      <Heading as="h3" fontSize={5}>
+        {title}
+      </Heading>
 
-        <Flex mt={3} color="gray" fontSize={2}>
-          <Text>{location}</Text>
-          <TextSeparator />
-          <Text>
-            {startDate} - {endDate}
-          </Text>
-        </Flex>
-
-        <Box mt={4} fontSize={3}>
-          {description}
-        </Box>
-      </Box>
-    </Flex>
+      <Flex mt={3} fontSize={2}>
+        <Text>{description}</Text>
+        <TextSeparator />
+        <Text>{location}</Text>
+        <TextSeparator />
+        <Text>
+          {startDate} - {endDate}
+        </Text>
+      </Flex>
+    </Box>
   )
 }
 
