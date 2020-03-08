@@ -18,7 +18,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title={title} description={description} />
 
-      <Box as="article">
+      <Box as="article" mb={6}>
         <Box as="header">
           <Heading as="h1" fontSize={6}>
             {title}
@@ -36,9 +36,11 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 }
 
 const PageNavigation = ({ previous, next, ...extraBoxProps }) => {
+  if (!previous && !next) return null
+
   return (
     <Flex as="nav" justifyContent="space-between" {...extraBoxProps}>
-      <Box height={5}>
+      <Box>
         {previous && (
           <Link as={GatsbyLink} to={previous.fields.slug} rel="prev">
             ← {previous.frontmatter.title}
