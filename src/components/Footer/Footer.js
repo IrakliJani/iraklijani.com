@@ -9,7 +9,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <Box as="footer" pt={5}>
+    <Box as="footer">
+      <Box height="1px" mb={4} backgroundColor="black" opacity={1 / 3} />
+
       <Text fontSize={1}>
         © {currentYear} {author.name}
       </Text>

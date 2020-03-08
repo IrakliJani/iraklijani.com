@@ -15,13 +15,7 @@ const ArticleItem = ({ title, slug, date, descriptionHTML }) => {
         <Text fontSize={1}>{date}</Text>
       </Box>
 
-      <Text
-        as="section"
-        py={3}
-        dangerouslySetInnerHTML={{
-          __html: descriptionHTML,
-        }}
-      />
+      <Text as="section" py={3} dangerouslySetInnerHTML={{ __html: descriptionHTML }} />
     </Box>
   )
 }
