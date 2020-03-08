@@ -14,7 +14,6 @@ import Avatar from "./../Avatar"
 
 const Bio = ({ ...boxProps }) => {
   const data = useStaticQuery(BIO_QUERY)
-
   const { author } = data.site.siteMetadata
 
   return (

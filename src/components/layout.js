@@ -4,17 +4,21 @@ import { Box } from "rebass"
 
 import Footer from "./../components/Footer"
 
-const Layout = ({ children, showFooter = true }) => {
+const Layout = ({ children, showHeader = true, showFooter = true }) => {
   return (
     <>
       <Global styles={globalCSS} />
 
       <Box height="2px" backgroundColor="black" />
 
-      <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" lineHeight="body" fontSize={3} color="black">
-        {/* TODO: add navbar */}
-        {/* <header>nav...</header> */}
+      {/* TODO: nav */}
+      {showHeader && (
+        <header>
+          <nav></nav>
+        </header>
+      )}
 
+      <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" lineHeight="body" fontSize={3} color="black">
         <main>{children}</main>
 
         {showFooter && <Footer />}
@@ -29,8 +33,8 @@ const globalCSS = theme => css`
   }
 
   body {
-    background-color: ${theme.colors.white};
     min-height: 100vh;
+    background-color: ${theme.colors.white};
     line-height: ${theme.lineHeight.body};
   }
 `
