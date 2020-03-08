@@ -1,9 +1,9 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Bio from "../components/Bio"
 import SEO from "../components/seo"
+import ArticleItem from "../components/ArticleItem"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -14,26 +14,11 @@ const BlogIndex = ({ data, location }) => {
 
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
+        const slug = node.fields.slug
+        const date = node.frontmatter.date
+        const descriptionHTML = node.frontmatter.description || node.excerpt
 
-        return (
-          <article key={node.fields.slug}>
-            <header>
-              <h3>
-                <Link to={node.fields.slug}>{title}</Link>
-              </h3>
-
-              <small>{node.frontmatter.date}</small>
-            </header>
-
-            <section>
-              <p
-                dangerouslySetInnerHTML={{
-                  __html: node.frontmatter.description || node.excerpt,
-                }}
-              />
-            </section>
-          </article>
-        )
+        return <ArticleItem key={slug} slug={slug} title={title} date={date} descriptionHTML={descriptionHTML} />
       })}
     </Layout>
   )
