@@ -18,7 +18,16 @@ const Layout = ({ children, showHeader = true, showFooter = true }) => {
         </header>
       )}
 
-      <Box maxWidth="1190px" mx="auto" px={8} py={6} fontFamily="body" lineHeight="body" fontSize={3} color="black">
+      <Box
+        maxWidth="1190px"
+        mx="auto"
+        px={[5, 6, 7, 8]}
+        py={[3, 4, 5, 6]}
+        fontFamily="body"
+        lineHeight="body"
+        fontSize={3}
+        color="black"
+      >
         <main>{children}</main>
 
         {showFooter && <Footer />}
