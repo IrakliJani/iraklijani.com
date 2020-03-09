@@ -6,7 +6,7 @@ const ArticleItem = ({ title, slug, date, descriptionHTML }) => {
   return (
     <Box as="article" mb={5}>
       <Box as="header">
-        <Heading>
+        <Heading fontSize={5}>
           <Link as={GatsbyLink} to={slug}>
             {title}
           </Link>
