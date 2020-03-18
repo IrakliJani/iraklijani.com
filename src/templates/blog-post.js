@@ -27,7 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           <Text fontSize={1}>{date}</Text>
         </Box>
 
-        <Text as="section" dangerouslySetInnerHTML={{ __html: postHTML }} />
+        <Text as="section" marginTop={[5]} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
       </Box>
 
       <PageNavigation previous={previous} next={next} mt={5} />
