@@ -15,11 +15,9 @@ const COLORS = {
 }
 
 const prismColors = {
-  dark: "#282c34", // dark blue
   char: "#D8DEE9",
   comment: "#B2B2B2",
   keyword: "#c5a5c5",
-  lineHighlight: "#353b45", // colors.dark + extra lightness
   primitive: "#5a9bcf",
   string: "#8dc891",
   variable: "#d7deea",
@@ -94,9 +92,9 @@ export const prismStyles = {
     my: "25px",
     mx: "-30px",
     px: "30px",
-    background: prismColors.dark,
+    background: COLORS.black,
+    fontSize: 2,
     color: COLORS.white,
-    borderRadius: 10,
     overflow: "auto",
     tabSize: "1.5em",
     WebkitOverflowScrolling: "touch",
@@ -106,7 +104,6 @@ export const prismStyles = {
   .gatsby-highlight > pre.prism-code`]: {
     height: "auto !important",
     margin: "1rem",
-    fontSize: 14,
     lineHeight: "20px",
     whiteSpace: "pre-wrap",
     wordBreak: "break-word",
@@ -115,7 +112,7 @@ export const prismStyles = {
     marginTop: 20,
   },
   ".gatsby-highlight-code-line": {
-    backgroundColor: prismColors.lineHighlight,
+    backgroundColor: hex2rgba(COLORS.white, 0.15),
     display: "block",
     margin: "-0.125rem calc(-1rem - 15px)",
     padding: "0.125rem calc(1rem + 15px)",

@@ -20,7 +20,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
       <Box as="article" mb={6}>
         <Box as="header">
-          <Heading as="h1" fontSize={6}>
+          <Heading as="h1" fontSize={7}>
             {title}
           </Heading>
 
