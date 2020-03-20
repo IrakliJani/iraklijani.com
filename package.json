@@ -37,6 +37,7 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
+    "gh-pages": "^2.2.0",
     "prettier": "^1.19.1"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
@@ -51,11 +52,11 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   }
 }
