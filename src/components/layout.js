@@ -1,5 +1,5 @@
 import React from "react"
-import { Global, css } from "@emotion/core"
+import { Global } from "@emotion/core"
 import { Box } from "rebass"
 
 import Header from "./../components/Header"
@@ -37,16 +37,15 @@ const ContentWrapper = ({ children, ...extraBoxProps }) => {
   )
 }
 
-const globalCSS = theme => css`
-  html {
-    background-color: ${theme.colors.black};
-  }
-
-  body {
-    min-height: 100vh;
-    background-color: ${theme.colors.white};
-    line-height: ${theme.lineHeight.body};
-  }
-`
+const globalCSS = theme => ({
+  html: {
+    backgroundColor: theme.colors.black,
+  },
+  body: {
+    minHeight: "100vh",
+    backgroundColor: theme.colors.white,
+    lineHeight: theme.lineHeight.body,
+  },
+})
 
 export default Layout
