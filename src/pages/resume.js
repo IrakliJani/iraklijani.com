@@ -15,7 +15,7 @@ const ResumeIndex = ({ data, location }) => {
   const educations = data.allEducationJson.nodes
 
   return (
-    <Layout location={location} showFooter={false}>
+    <Layout location={location} showHeader={false} showFooter={false}>
       <SEO title="Résumé" />
 
       <Bio mb={7} />
