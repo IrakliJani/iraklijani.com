@@ -1,7 +1,8 @@
 ---
 title: Hello World!
-date: "2020-03-20T10:27:09.726Z"
-description: "Hello world post."
+date: 2020-03-20T10:27:09.726Z
+description: Hello world post.
+published: true
 ---
 
 This is a classic "Hello World" post!
