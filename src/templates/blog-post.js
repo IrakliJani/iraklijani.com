@@ -1,5 +1,5 @@
 import React from "react"
-import { Link as GatsbyLink, graphql } from "gatsby"
+import { navigate, graphql } from "gatsby"
 import { Flex, Box, Link, Heading, Text } from "rebass"
 
 import Layout from "../components/layout"
@@ -40,22 +40,28 @@ const PageNavigation = ({ previous, next, ...extraBoxProps }) => {
 
   return (
     <Flex as="nav" justifyContent="space-between" {...extraBoxProps}>
-      <Box>
-        {previous && (
-          <Link as={GatsbyLink} to={previous.fields.slug} rel="prev">
-            ← {previous.frontmatter.title}
-          </Link>
-        )}
-      </Box>
+      <Box width={1 / 2}>{previous && <NavigationLink post={previous} prefix="← " />}</Box>
 
-      <Box>
-        {next && (
-          <Link as={GatsbyLink} to={next.fields.slug} rel="next">
-            {next.frontmatter.title} →
-          </Link>
-        )}
-      </Box>
+      {previous && next ? <Box width="1px" bg="black" opacity={1 / 3} /> : null}
+
+      <Box width={1 / 2}>{next && <NavigationLink post={next} suffix=" →" textAlign="right" />}</Box>
     </Flex>
+  )
+}
+
+const NavigationLink = ({ prefix, post, suffix, ...boxProps }) => {
+  return (
+    <Link
+      display="block"
+      p={5}
+      onClick={() => navigate(post.node.fields.slug)}
+      sx={{ cursor: "pointer", borderBottom: "none" }}
+      {...boxProps}
+    >
+      {prefix}
+      {post.node.frontmatter.title}
+      {suffix}
+    </Link>
   )
 }
 
