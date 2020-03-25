@@ -9,7 +9,7 @@ I constantly struggle with what I consider to be "distractions" or "time-wasters
 
 Here are some (but not a complete list of) tools that I used to limit distractions and improve productivity: [SelfControl](https://alternativeto.net/software/selfcontrol/), [Qbserve](https://alternativeto.net/software/qbserve/). For the mobile, I use "Downtimes" and [block access](https://www.imore.com/how-block-specific-websites-being-accessed-safari-iphone-and-ipad) to frequently visited websites.
 
-Even with such limitations I quickly adjust my behavior to bypass blocked content or I come up with new time-wasters. I fail and that failure makes me feel miserable.
+Even with such limitations I quickly adjust my behavior to bypass blocked content or come up with new time-wasters. I fail and that failure makes me feel miserable.
 
 I gave up and lost control until recently I started working on an interesting side project which consumed my free time and in fact, it consumed most of my distraction time too! I was not interrupting my work by picking up the phone (that often) and I was not wondering on the web to amuse myself. That felt good.
 
