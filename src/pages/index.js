@@ -13,12 +13,11 @@ const BlogIndex = ({ data, location }) => {
       <SEO title="All posts" />
 
       {posts.map(({ node }) => {
-        const title = node.frontmatter.title || node.fields.slug
         const slug = node.fields.slug
-        const date = node.frontmatter.date
-        const descriptionHTML = node.frontmatter.description || node.excerpt
+        const { path, title, date, description } = node.frontmatter
+        const descriptionHTML = description || node.excerpt
 
-        return <ArticleItem key={slug} slug={slug} title={title} date={date} descriptionHTML={descriptionHTML} />
+        return <ArticleItem key={slug} path={path} title={title} date={date} descriptionHTML={descriptionHTML} />
       })}
     </Layout>
   )
@@ -37,6 +36,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
+            path
             date(formatString: "MMMM DD, YYYY")
             title
             description

@@ -16,6 +16,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                path
                 published
               }
             }
@@ -34,7 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   posts.forEach((post, index) => {
     createPage({
-      path: post.node.fields.slug,
+      path: post.node.frontmatter.path,
       component: blogPost,
       context: {
         slug: post.node.fields.slug,

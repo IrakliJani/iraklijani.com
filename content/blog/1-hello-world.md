@@ -1,4 +1,5 @@
 ---
+path: /blog/hello-world
 title: Hello World!
 date: 2020-03-20T10:27:09.726Z
 description: Hello world post.

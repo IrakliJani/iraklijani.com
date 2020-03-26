@@ -54,8 +54,8 @@ const NavigationLink = ({ prefix, post, suffix, ...boxProps }) => {
     <Link
       display="block"
       p={5}
-      onClick={() => navigate(post.node.fields.slug)}
-      sx={{ cursor: "pointer", borderBottom: "none" }}
+      onClick={() => navigate(post.node.frontmatter.path)}
+      sx={{ cursor: "pointer", userSelect: "none", borderBottom: "none" }}
       {...boxProps}
     >
       {prefix}

@@ -1,4 +1,5 @@
 ---
+path: /blog/on-distractions
 title: On distractions
 date: 2020-03-25T15:29:10.003Z
 description: And how to deal with them.
