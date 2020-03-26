@@ -15,23 +15,21 @@ const Layout = ({ children, showHeader = true, showFooter = true }) => {
       <Box fontFamily="body" lineHeight="body" fontSize={3} color="black">
         {showHeader && <Header ContentWrapper={ContentWrapper} />}
 
-        <Box maxWidth="1190px" mx="auto">
-          <Box as="main" py={[3, 4, 5, 6]}>
-            <ContentWrapper>
-              {children}
+        <Box as="main" py={[3, 4, 5, 6]}>
+          <ContentWrapper>
+            {children}
 
-              {showFooter && <Footer />}
-            </ContentWrapper>
-          </Box>
+            {showFooter && <Footer />}
+          </ContentWrapper>
         </Box>
       </Box>
     </>
   )
 }
 
-const ContentWrapper = ({ children, ...extraBoxProps }) => {
+const ContentWrapper = ({ children, ...boxProps }) => {
   return (
-    <Box px={[5, 6, 7, 8]} {...extraBoxProps}>
+    <Box maxWidth="1190px" mx="auto" px={[5, 6, 7, 8]} {...boxProps}>
       {children}
     </Box>
   )

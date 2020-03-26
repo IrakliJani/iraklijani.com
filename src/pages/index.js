@@ -29,7 +29,7 @@ const ArticleItem = ({ path, title, date, descriptionHTML }) => {
     <Box as="article" mb={5}>
       <Box as="header">
         <Heading fontSize={6} mb={2}>
-          <Link as={GatsbyLink} to={path}>
+          <Link as={GatsbyLink} to={path} backgroundColor="white">
             {title}
           </Link>
         </Heading>
@@ -39,7 +39,7 @@ const ArticleItem = ({ path, title, date, descriptionHTML }) => {
         </Tag>
       </Box>
 
-      <Text as="section" py={3} dangerouslySetInnerHTML={{ __html: descriptionHTML }} />
+      <Text as="section" pt={4} dangerouslySetInnerHTML={{ __html: descriptionHTML }} />
     </Box>
   )
 }

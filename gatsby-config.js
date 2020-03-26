@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "Irakli Jani",
     author: {
-      name: "Irakli Janiashvili",
+      name: "Irakli Jani",
       title: "Full-Stack Software Engineer",
       bio: `Hey, I’m Irakli, Software Engineer from Tbilisi, Georgia. I have 7 years of experience working on scalable apps for EU, US and Georgian companies On-Site and Remotely. Looking forward to joining a team of talented people.`,
       email: "hey@iraklijani.com",
