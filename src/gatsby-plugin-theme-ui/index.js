@@ -9,7 +9,6 @@ const COLORS = {
 
   // TODO: imported
   text: "#1a1a1a", // very dark grey / black substitute
-  subtle: "#6d6d6d", // light grey for text
   divider: "#ececec", // very light grey
   note: "#ffe564", // yellow
 }
@@ -200,35 +199,21 @@ const importedStyles = {
     "& a:not(.anchor):not(.gatsby-resp-image-link)": linkStyle,
 
     "& > p:first-child": {
-      fontSize: 18,
-      fontWeight: 300,
-      color: COLORS.subtle,
-
-      [media.greaterThan("xlarge")]: {
-        fontSize: 24,
-      },
-
-      "& a, & strong": {
-        fontWeight: 400,
-      },
+      fontSize: 4,
+      lineHeight: "32px",
     },
 
     "& p": {
-      marginTop: 30,
-      fontSize: 17,
-      lineHeight: 1.7,
+      mt: 4,
+      fontSize: 3,
+      lineHeight: "26px",
 
       "&:first-of-type": {
-        marginTop: 15,
+        mt: 3,
       },
 
       "&:first-child": {
-        marginTop: 0,
-      },
-
-      [media.lessThan("large")]: {
-        fontSize: 16,
-        marginTop: 25,
+        mt: 0,
       },
     },
 
@@ -320,7 +305,6 @@ const importedStyles = {
 
     "& h4": {
       fontSize: 20,
-      color: COLORS.subtle,
       lineHeight: 1.3,
       marginTop: 50,
       fontWeight: 400,

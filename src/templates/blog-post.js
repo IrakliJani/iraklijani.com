@@ -20,14 +20,14 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
       <Box as="article" mb={6}>
         <Box as="header">
-          <Heading as="h1" fontSize={7}>
+          <Heading as="h1" fontSize={[6, 7]}>
             {title}
           </Heading>
 
           <Text fontSize={1}>{date}</Text>
         </Box>
 
-        <Text as="section" marginTop={[5]} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
+        <Text as="section" marginTop={5} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
       </Box>
 
       <PageNavigation previous={previous} next={next} mt={5} />
