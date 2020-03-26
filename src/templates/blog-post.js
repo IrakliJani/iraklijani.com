@@ -4,6 +4,7 @@ import { Flex, Box, Link, Heading, Text } from "rebass"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Tag from "../components/Tag"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
   const post = data.markdownRemark
@@ -24,7 +25,9 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
             {title}
           </Heading>
 
-          <Text fontSize={1}>{date}</Text>
+          <Tag display="inline-flex" bg="redLightest">
+            {date}
+          </Tag>
         </Box>
 
         <Text as="section" marginTop={5} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
@@ -53,6 +56,7 @@ const NavigationLink = ({ prefix, post, suffix, ...boxProps }) => {
   return (
     <Link
       display="block"
+      fontFamily="heading"
       p={5}
       onClick={() => navigate(post.node.frontmatter.path)}
       sx={{ cursor: "pointer", userSelect: "none", borderBottom: "none" }}

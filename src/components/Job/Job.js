@@ -52,9 +52,11 @@ const Job = ({ logo, title, website, role, type, hq, startDate, endDate, descrip
       </Box>
 
       <Flex>
-        {skills.map(skill => {
-          return <Tag mr={3}>{skill}</Tag>
-        })}
+        {skills.map(skill => (
+          <Tag mr={3} bg="blueLightest">
+            {skill}
+          </Tag>
+        ))}
       </Flex>
     </Box>
   )

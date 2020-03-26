@@ -1,9 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link as GatsbyLink } from "gatsby"
+import { Box, Heading, Text, Link } from "rebass"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ArticleItem from "../components/ArticleItem"
+import Tag from "../components/Tag"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
@@ -20,6 +21,26 @@ const BlogIndex = ({ data, location }) => {
         return <ArticleItem key={slug} path={path} title={title} date={date} descriptionHTML={descriptionHTML} />
       })}
     </Layout>
+  )
+}
+
+const ArticleItem = ({ path, title, date, descriptionHTML }) => {
+  return (
+    <Box as="article" mb={5}>
+      <Box as="header">
+        <Heading fontSize={6} mb={2}>
+          <Link as={GatsbyLink} to={path}>
+            {title}
+          </Link>
+        </Heading>
+
+        <Tag display="inline-block" bg="redLightest">
+          {date}
+        </Tag>
+      </Box>
+
+      <Text as="section" py={3} dangerouslySetInnerHTML={{ __html: descriptionHTML }} />
+    </Box>
   )
 }
 
