@@ -74,13 +74,16 @@ const media = {
 }
 
 const linkStyle = {
-  textDecoration: "none",
-  backgroundColor: hex2rgba(COLORS.black, 0.05),
-  borderBottom: `1px solid ${hex2rgba(COLORS.black, 0.2)}`,
   color: COLORS.text,
+  bg: hex2rgba(COLORS.black, 0.05),
+  textDecoration: "none",
+  borderBottomWidth: "1px",
+  borderBottomStyle: "solid",
+  borderBottomColor: hex2rgba(COLORS.black, 0.2),
 
   ":hover": {
     backgroundColor: hex2rgba(COLORS.black, 0.1),
+    borderBottomWidth: "1px",
     borderBottomColor: COLORS.text,
   },
 }
@@ -412,5 +415,10 @@ export default {
   },
 
   link: importedStyles.link,
+  linkNoUnderline: {
+    ...importedStyles.link,
+    borderBottomWidth: "0px",
+  },
+
   markdown: importedStyles.markdown,
 }

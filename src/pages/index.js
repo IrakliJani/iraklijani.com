@@ -29,7 +29,7 @@ const ArticleItem = ({ path, title, date, descriptionHTML }) => {
     <Box as="article" mb={5}>
       <Box as="header">
         <Heading fontSize={6} mb={2}>
-          <Link as={GatsbyLink} to={path} backgroundColor="white">
+          <Link variant="linkNoUnderline" as={GatsbyLink} to={path} backgroundColor="white">
             {title}
           </Link>
         </Heading>
