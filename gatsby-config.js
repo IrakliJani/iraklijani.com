@@ -3,14 +3,14 @@ module.exports = {
     title: "Irakli Jani",
     author: {
       name: "Irakli Jani",
-      title: "Full-Stack Software Engineer",
+      title: "Senior Software Engineer",
       bio: `Hey, I’m Irakli, Software Engineer from Tbilisi, Georgia. I have 7 years of experience working on scalable apps for EU, US and Georgian companies On-Site and Remotely. Looking forward to joining a team of talented people.`,
       email: "hey@iraklijani.com",
       phone: "+995 (514) 111-001",
       social: {
-        twitter: "https://twitter.com/IrakliJani",
-        linkedin: "https://linkedin.com/in/IrakliJani",
         github: "https://github.com/IrakliJani",
+        linkedin: "https://linkedin.com/in/IrakliJani",
+        twitter: "https://twitter.com/IrakliJani",
       },
     },
     description: "Irakli Jani's Personal Website",

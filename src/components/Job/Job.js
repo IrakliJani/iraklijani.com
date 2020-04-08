@@ -4,7 +4,7 @@ import { Flex, Box, Heading, Text, Link as ExternalLink } from "rebass"
 
 import Tag from "./../Tag"
 
-const Job = ({ logo, title, website, role, type, hq, startDate, endDate, description, skills, ...boxProps }) => {
+const Job = ({ logo, title, website, role, isRemote, hq, startDate, endDate, description, skills, ...boxProps }) => {
   return (
     <Box {...boxProps}>
       <Flex>
@@ -27,7 +27,7 @@ const Job = ({ logo, title, website, role, type, hq, startDate, endDate, descrip
           <Flex mt={3 + 1} fontSize={2}>
             <Text>{role}</Text>
             <TextSeparator />
-            <Text>{type}</Text>
+            <Text>{isRemote ? "Remote" : hq}</Text>
             <TextSeparator />
             <Text>{hq}</Text>
             <TextSeparator />
@@ -52,7 +52,7 @@ const Job = ({ logo, title, website, role, type, hq, startDate, endDate, descrip
       </Box>
 
       <Flex>
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <Tag mr={3} bg="blueLightest">
             {skill}
           </Tag>

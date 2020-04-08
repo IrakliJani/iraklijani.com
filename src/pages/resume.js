@@ -24,7 +24,7 @@ const ResumeIndex = ({ data, location }) => {
         Work History
       </FancyHeading>
 
-      {jobs.map(job => {
+      {jobs.map((job) => {
         return <Job {...job} mb={6} />
       })}
 
@@ -32,7 +32,7 @@ const ResumeIndex = ({ data, location }) => {
         Education
       </FancyHeading>
 
-      {educations.map(education => {
+      {educations.map((education) => {
         return <Education {...education} />
       })}
 
@@ -81,7 +81,7 @@ export const pageQuery = graphql`
         title
         website
         role
-        type
+        isRemote
         hq
         startDate
         endDate
