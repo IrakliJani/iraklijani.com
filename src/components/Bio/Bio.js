@@ -29,7 +29,7 @@ const Bio = ({ ...boxProps }) => {
       <Text fontSize={[2, 3]} py={[4, 5]}>
         {author.bio}
         <Box height={3}></Box>
-        Say hi at: <Link href={`mailto:${author.email}`}>{author.email}</Link>
+        email me at: <Link href={`mailto:${author.email}`}>{author.email}</Link>
         <Box height={3}></Box>
         <Heading>Social:</Heading>
         <Box as="ul">
