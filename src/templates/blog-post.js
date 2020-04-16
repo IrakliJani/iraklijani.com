@@ -42,12 +42,21 @@ const PageNavigation = ({ previous, next, ...extraBoxProps }) => {
   if (!previous && !next) return null
 
   return (
-    <Flex as="nav" justifyContent="space-between" {...extraBoxProps}>
-      <Box width={1 / 2}>{previous && <NavigationLink post={previous} prefix="← " />}</Box>
+    <Flex as="nav" flexDirection={["column-reverse", "column-reverse", "row", "row"]} {...extraBoxProps}>
+      <Box width={[null, null, 1 / 2, 1 / 2]}>{previous && <NavigationLink post={previous} prefix="← " />}</Box>
 
-      {previous && next ? <Box width="1px" bg="black" opacity={1 / 3} /> : null}
+      {previous && next ? (
+        <Box
+          width={["auto", "auto", "1px", "1px"]}
+          height={["1px", "1px", "auto", "auto"]}
+          bg="black"
+          opacity={1 / 4}
+        />
+      ) : null}
 
-      <Box width={1 / 2}>{next && <NavigationLink post={next} suffix=" →" textAlign="right" />}</Box>
+      <Box width={[null, null, 1 / 2, 1 / 2]}>
+        {next && <NavigationLink post={next} suffix=" →" textAlign="right" />}
+      </Box>
     </Flex>
   )
 }
@@ -57,7 +66,9 @@ const NavigationLink = ({ prefix, post, suffix, ...boxProps }) => {
     <Link
       display="block"
       fontFamily="heading"
-      p={5}
+      fontSize={[2, 2, 3, 4]}
+      px={[3, 4, 5, 6]}
+      py={[3, 3, 4, 5]}
       onClick={() => navigate(post.node.frontmatter.path)}
       sx={{ cursor: "pointer", userSelect: "none", borderBottom: "none" }}
       {...boxProps}
