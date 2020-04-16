@@ -19,18 +19,18 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
     <Layout location={location}>
       <SEO title={title} description={description} />
 
-      <Box as="article" mb={6}>
+      <Box as="article" mb={3}>
         <Box as="header">
-          <Heading as="h1" fontSize={[6, 7]}>
+          <Heading as="h1" fontSize={[6, 7]} mb={3}>
             {title}
           </Heading>
 
-          <Tag display="inline-flex" bg="redLightest">
+          <Tag display="inline-block" bg="blueLightest">
             {date}
           </Tag>
         </Box>
 
-        <Text as="section" marginTop={5} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
+        <Text as="section" pt={4} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
       </Box>
 
       <PageNavigation previous={previous} next={next} mt={5} />

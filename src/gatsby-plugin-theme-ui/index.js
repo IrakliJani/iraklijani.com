@@ -91,33 +91,28 @@ const linkStyle = {
 // PRISM
 export const prismStyles = {
   ".gatsby-highlight": {
-    my: "25px",
-    mx: "-30px",
-    px: "30px",
-    background: COLORS.black,
+    my: 5,
+    mx: -6,
+    px: 6,
     fontSize: 2,
     color: COLORS.white,
+    background: COLORS.black,
     overflow: "auto",
-    tabSize: "1.5em",
     WebkitOverflowScrolling: "touch",
+  },
+  ".gatsby-highlight-code-line": {
+    backgroundColor: hex2rgba(COLORS.white, 0.15),
+    display: "block",
+    mx: -6,
+    px: 6,
   },
   [`.gatsby-highlight > code[class*="gatsby-code-"],
   .gatsby-highlight > pre[class*="gatsby-code-"],
   .gatsby-highlight > pre.prism-code`]: {
     height: "auto !important",
-    margin: "1rem",
     lineHeight: "20px",
     whiteSpace: "pre-wrap",
     wordBreak: "break-word",
-  },
-  ".gatsby-highlight + .gatsby-highlight": {
-    marginTop: 20,
-  },
-  ".gatsby-highlight-code-line": {
-    backgroundColor: hex2rgba(COLORS.white, 0.15),
-    display: "block",
-    margin: "-0.125rem calc(-1rem - 15px)",
-    padding: "0.125rem calc(1rem + 15px)",
   },
   ".token.attr-name": {
     color: prismColors.keyword,

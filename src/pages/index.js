@@ -28,13 +28,13 @@ const ArticleItem = ({ path, title, date, descriptionHTML }) => {
   return (
     <Box as="article" mb={5}>
       <Box as="header">
-        <Heading fontSize={6} mb={2}>
+        <Heading fontSize={6} mb={3}>
           <Link variant="linkNoUnderline" as={GatsbyLink} to={path} backgroundColor="white">
             {title}
           </Link>
         </Heading>
 
-        <Tag display="inline-block" bg="redLightest">
+        <Tag display="inline-block" bg="blueLightest">
           {date}
         </Tag>
       </Box>
