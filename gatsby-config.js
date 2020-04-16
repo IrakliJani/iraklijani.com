@@ -1,10 +1,20 @@
+const workingSince = new Date(2012, 7, 1)
+
+const yearsOfExperience = () => {
+  const diff = Date.now() - workingSince
+  const date = new Date(diff)
+  return Math.abs(date.getUTCFullYear() - 1970)
+}
+
 module.exports = {
   siteMetadata: {
     title: "Irakli Jani",
     author: {
       name: "Irakli Jani",
-      title: "Senior Software Engineer",
-      bio: `Hey, I’m Irakli, Software Engineer from Tbilisi, Georgia. I have 7 years of experience working on scalable apps for EU, US and Georgian companies On-Site and Remotely. Looking forward to joining a team of talented people.`,
+      title: "Software Engineer",
+      bio: `Hey, I’m Irakli, Full-Stack Software Engineer from Tbilisi, Georgia 🇬🇪. I have ${yearsOfExperience(
+        workingSince,
+      )} years of experience working on web and mobile apps for multiple successful companies.`,
       email: "hey@iraklijani.com",
       phone: "+995 (514) 111-001",
       social: {

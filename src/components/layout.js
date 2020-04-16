@@ -15,7 +15,7 @@ const Layout = ({ children, showHeader = true, showFooter = true }) => {
       <Box fontFamily="body" lineHeight="body" fontSize={3} color="black">
         {showHeader && <Header ContentWrapper={ContentWrapper} />}
 
-        <Box as="main" py={[3, 4, 5, 6]} sx={{ overflowX: "hidden" }}>
+        <Box as="main" py={[4, 5, 6, 7]} sx={{ overflowX: "hidden" }}>
           <ContentWrapper>
             {children}
 
