@@ -15,22 +15,6 @@ const COLORS = {
   note: "#ffe564", // yellow
 }
 
-const prismColors = {
-  char: "#D8DEE9",
-  comment: "#B2B2B2",
-  keyword: "#c5a5c5",
-  primitive: "#5a9bcf",
-  string: "#8dc891",
-  variable: "#d7deea",
-  boolean: "#ff8b50",
-  punctuation: "#88C6BE",
-  tag: "#fc929e",
-  function: "#79b6f2",
-  className: "#FAC863",
-  method: "#6699CC",
-  operator: "#fc929e",
-}
-
 // TODO: imported...
 const SIZES = {
   xsmall: { min: 0, max: 599 },
@@ -90,23 +74,26 @@ const linkStyle = {
   },
 }
 
+const contentBounds = [4, 5, 6, 7]
+
 // PRISM
 export const prismStyles = {
   ".gatsby-highlight": {
-    my: 5,
-    mx: -6,
-    px: 6,
-    fontSize: 2,
+    my: [2, 3, 4, 5],
+    mx: contentBounds.map((n) => -n),
+    px: contentBounds,
+    fontSize: [0, 1, 2, 2],
+    fontFamily: "mono",
     color: COLORS.white,
-    background: COLORS.black,
-    overflow: "auto",
+    background: "#011627",
+    overflow: "visible",
     WebkitOverflowScrolling: "touch",
   },
   ".gatsby-highlight-code-line": {
-    backgroundColor: hex2rgba(COLORS.white, 0.15),
+    backgroundColor: hex2rgba(COLORS.white, 0.075),
     display: "block",
-    mx: -6,
-    px: 6,
+    mx: contentBounds.map((n) => -n),
+    px: contentBounds,
   },
   [`.gatsby-highlight > code[class*="gatsby-code-"],
   .gatsby-highlight > pre[class*="gatsby-code-"],
@@ -116,76 +103,69 @@ export const prismStyles = {
     whiteSpace: "pre-wrap",
     wordBreak: "break-word",
   },
-  ".token.attr-name": {
-    color: prismColors.keyword,
+
+  "code[class*=language-],pre[class*=language-]": {
+    fontFamily: "JetBrains Mono",
+    color: "#d6deeb",
+    textAlign: "left",
+    whiteSpace: "pre",
+    wordSpacing: "normal",
+    wordBreak: "normal",
+    wordWrap: "normal",
+    lineHeight: "1.5",
+    MozTabSize: "4",
+    OTabSize: "4",
+    tabSize: "4",
+    WebkitHyphens: "none",
+    MozHyphens: "none",
+    msHyphens: "none",
+    hyphens: "none",
   },
-  [`.token.comment,
-  .token.block-comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata`]: {
-    color: prismColors.comment,
+  "code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection": {
+    textShadow: "none",
+    background: "rgba(29,59,83,.99)",
   },
-  [`.token.property,
-  .token.number,
-  .token.function-name,
-  .token.constant,
-  .token.symbol,
-  .token.deleted`]: {
-    color: prismColors.primitive,
+  "code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection": {
+    textShadow: "none",
+    background: "rgba(29,59,83,.99)",
   },
-  ".token.boolean": {
-    color: prismColors.boolean,
+
+  "pre[class*=language-]": {
+    padding: "1em",
+    margin: ".5em 0",
   },
-  ".token.tag": {
-    color: prismColors.tag,
+  ":not(pre)>code[class*=language-],pre[class*=language-]": {
+    color: "#fff",
+    background: "#011627",
   },
-  ".token.string": {
-    color: prismColors.string,
+  ":not(pre)>code[class*=language-]": {
+    padding: ".1em",
+    borderRadius: ".3em",
+    whiteSpace: "normal",
   },
-  ".token.punctuation": {
-    color: prismColors.punctuation,
-  },
-  [`.token.selector,
-  .token.char,
-  .token.builtin,
-  .token.inserted`]: {
-    color: prismColors.char,
-  },
-  ".token.function": {
-    color: prismColors.function,
-  },
-  [`.token.operator,
-  .token.entity,
-  .token.url,
-  .token.variable`]: {
-    color: prismColors.variable,
-  },
-  ".token.attr-value": {
-    color: prismColors.string,
-  },
-  ".token.keyword": {
-    color: prismColors.keyword,
-  },
-  [`.token.atrule,
-  .token.class-name`]: {
-    color: prismColors.className,
-  },
-  ".token.important": {
-    fontWeight: 400,
-  },
-  ".token.bold": {
-    fontWeight: 700,
-  },
-  ".token.italic": {
+  ".token.cdata,.token.comment,.token.prolog": {
+    color: "#637777",
     fontStyle: "italic",
   },
-  ".token.entity": {
-    cursor: "help",
+  ".token.punctuation": { color: "#c792ea" },
+  ".namespace": { color: "#b2ccd6" },
+  ".token.deleted": { color: "rgba(239,83,80,.56)", fontStyle: "italic" },
+  ".token.property,.token.symbol": { color: "#80cbc4" },
+  ".token.keyword,.token.operator,.token.tag": { color: "#7fdbca" },
+  ".token.boolean": { color: "#ff5874" },
+  ".token.number": { color: "#f78c6c" },
+  ".token.builtin,.token.char,.token.constant,.token.function": {
+    color: "#82aaff",
   },
-  ".namespace": {
-    opacity: 0.7,
+  ".token.doctype,.token.selector": { color: "#c792ea", fontStyle: "italic" },
+  ".token.attr-name,.token.inserted": { color: "#addb67", fontStyle: "italic" },
+  ".language-css .token.string,.style .token.string,.token.entity,.token.string,.token.url": {
+    color: "#addb67",
   },
+  ".token.atrule,.token.attr-value,.token.class-name": { color: "#ffcb8b" },
+  ".token.important,.token.regex,.token.variable": { color: "#d6deeb" },
+  ".token.bold,.token.important": { fontWeight: "700" },
+  ".token.italic": { fontStyle: "italic" },
 }
 
 const importedStyles = {
@@ -413,7 +393,7 @@ export default {
     contentWrapper: {
       maxWidth: "1190px",
       mx: "auto",
-      px: [4, 5, 6, 7],
+      px: contentBounds,
     },
   },
 

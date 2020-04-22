@@ -10,6 +10,7 @@ This is a classic "Hello World" post!
 
 ```js
 const greeting = name => {
+  // returns greeting
   // highlight-next-line
   return `Hello ${name}!`
 }
