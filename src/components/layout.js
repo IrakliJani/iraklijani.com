@@ -36,6 +36,9 @@ const ContentWrapper = ({ children, ...boxProps }) => {
 }
 
 const globalCSS = (theme) => ({
+  "::selection": {
+    backgroundColor: theme.colors.selection,
+  },
   html: {
     backgroundColor: theme.colors.black,
   },

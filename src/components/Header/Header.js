@@ -7,7 +7,7 @@ const Header = ({ ContentWrapper }) => {
     <Box as="header" backgroundColor="black" color="white">
       <ContentWrapper as="nav">
         <Flex height={6} alignItems="center" justifyContent="space-between">
-          <Link as={GatsbyLink} to="/" fontFamily="SpaceGrotesk" color="white">
+          <Link as={GatsbyLink} to="/" fontFamily="SpaceGrotesk" fontWeight="bold" color="white">
             Irakli Jani
           </Link>
 

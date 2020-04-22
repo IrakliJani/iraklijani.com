@@ -7,6 +7,8 @@ const COLORS = {
   yellowLightest: "#FAF7E8",
   redLightest: "#FAEDEF",
 
+  selection: "#FDF4AA",
+
   // TODO: imported
   text: "#1a1a1a", // very dark grey / black substitute
   divider: "#ececec", // very light grey

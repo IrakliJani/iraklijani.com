@@ -10,31 +10,34 @@ const Bio = ({ ...boxProps }) => {
 
   return (
     <Box {...boxProps}>
-      <Flex flexDirection={["column", "row"]}>
-        <Box flexShrink={0} mr={5}>
-          <Avatar />
-        </Box>
+      <Avatar />
 
-        <Box>
-          <Heading as="h2" fontSize={[5, 7]}>
-            {author.name}
-          </Heading>
+      <Box height={3} />
 
-          <Heading as="h3" fontSize={[3, 5]}>
-            {author.title}
-          </Heading>
-        </Box>
-      </Flex>
+      <Heading as="h2" fontSize={[3, 5]}>
+        {author.name}
+      </Heading>
 
-      <Text fontSize={[2, 3]} py={[4, 5]}>
+      <Heading as="h3" fontSize={[2, 3]} fontWeight="normal">
+        {author.title}
+      </Heading>
+
+      <Text as="section" variant="markdown" py={[4, 5]}>
         {author.bio}
-        <Box height={3}></Box>
-        email me at: <Link href={`mailto:${author.email}`}>{author.email}</Link>
-        <Box height={3}></Box>
-        <Heading>Social:</Heading>
+
+        <Box height={3} />
+
+        <Text>
+          Email me at <Link href={`mailto:${author.email}`}>{author.email}</Link>
+        </Text>
+
+        <Box height={3} />
+
+        <Heading as="h5">Social:</Heading>
+
         <Box as="ul">
           {["github", "twitter", "linkedin"].map((social) => (
-            <Box key={social} as="li" py={2} sx={{ textTransform: "capitalize" }}>
+            <Box key={social} as="li" sx={{ textTransform: "capitalize" }}>
               <Link href={author.social[social]} target="_blank">
                 {social}
               </Link>
