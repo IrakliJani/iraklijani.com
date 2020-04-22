@@ -13,25 +13,17 @@ const Layout = ({ children, showHeader = true, showFooter = true }) => {
       <Box height="2px" backgroundColor="black" />
 
       <Box fontFamily="body" lineHeight="body" fontSize={3} color="black">
-        {showHeader && <Header ContentWrapper={ContentWrapper} />}
+        {showHeader && <Header />}
 
         <Box as="main" py={[4, 4, 4, 5]} sx={{ overflowX: "hidden" }}>
-          <ContentWrapper>
+          <Box variant="contentWrapper">
             {children}
 
             {showFooter && <Footer />}
-          </ContentWrapper>
+          </Box>
         </Box>
       </Box>
     </>
-  )
-}
-
-const ContentWrapper = ({ children, ...boxProps }) => {
-  return (
-    <Box maxWidth="1190px" mx="auto" px={[4, 5, 6, 7]} {...boxProps}>
-      {children}
-    </Box>
   )
 }
 

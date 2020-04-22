@@ -402,13 +402,19 @@ export default {
 
   heading: {
     color: "black",
-  },
-  fontWeight: {
-    heading: 600,
+    fontWeight: 600,
   },
   lineHeight: {
     body: "normal",
     heading: "normal",
+  },
+
+  variants: {
+    contentWrapper: {
+      maxWidth: "1190px",
+      mx: "auto",
+      px: [4, 5, 6, 7],
+    },
   },
 
   link: importedStyles.link,
