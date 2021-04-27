@@ -1,19 +1,18 @@
 import React from "react"
-import Image from "gatsby-image"
 import { useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Avatar = () => {
-  const { avatar } = useStaticQuery(AVATAR_QUERY)
-  return <Image fixed={avatar.childImageSharp.fixed} />
+  const avatar = useStaticQuery(AVATAR_QUERY)
+  return <GatsbyImage image={getImage(avatar.file)} alt="avatar" />
 }
 
+// ,
 const AVATAR_QUERY = graphql`
-  query AvatarQuery {
-    avatar: file(absolutePath: { regex: "/me.jpeg/" }) {
+  {
+    file(absolutePath: { regex: "/me.jpeg/" }) {
       childImageSharp {
-        fixed(width: 96, height: 96) {
-          ...GatsbyImageSharpFixed_withWebp
-        }
+        gatsbyImageData(layout: FIXED, width: 96, height: 96, placeholder: BLURRED, formats: [AUTO, WEBP])
       }
     }
   }

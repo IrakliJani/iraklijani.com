@@ -1,20 +1,18 @@
 const workingSince = new Date(2012, 7, 1)
 
-const yearsOfExperience = () => {
+const yearsOfExperience = ((workingSince) => {
   const diff = Date.now() - workingSince
   const date = new Date(diff)
   return Math.abs(date.getUTCFullYear() - 1970)
-}
+})(workingSince)
 
 module.exports = {
   siteMetadata: {
-    title: "Irakli Jani",
+    title: "Irakli Janiashvili",
     author: {
-      name: "Irakli Jani",
+      name: "Irakli Janiashvili",
       title: "Software Engineer",
-      bio: `Hey, I’m Irakli, Full-Stack Software Engineer from Tbilisi, Georgia 🇬🇪. I have ${yearsOfExperience(
-        workingSince,
-      )} years of experience working on web and mobile apps for multiple successful companies.`,
+      bio: `Hey, I’m Irakli, Full-Stack Software Engineer from Tbilisi, Georgia 🇬🇪. I have ${yearsOfExperience} years of experience working on web and mobile apps for multiple successful companies.`,
       email: "hey@iraklijani.com",
       phone: "+995 (514) 111-001",
       social: {
@@ -23,7 +21,7 @@ module.exports = {
         twitter: "https://twitter.com/IrakliJani",
       },
     },
-    description: "Irakli Jani's Personal Website",
+    description: "Irakli Janiashvili (@IrakliJani) Software Engineer",
     siteUrl: "https://iraklijani.com/",
   },
   plugins: [
@@ -72,25 +70,67 @@ module.exports = {
         trackingId: "UA-68715161-4",
       },
     },
-    "gatsby-plugin-feed",
     {
-      resolve: "gatsby-plugin-manifest",
-      // TODO: test this...
+      resolve: `gatsby-plugin-feed`,
       options: {
-        name: "Irakli Jani's Blog",
-        short_name: "IrakliJani",
-        start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#663399",
-        display: "minimal-ui",
-        icon: "content/assets/gatsby-icon.png",
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "Your Site's RSS Feed",
+            // optional configuration to insert feed reference in pages:
+            // if `string` is used, it will be used to create RegExp and then test if pathname of
+            // current page satisfied this regular expression;
+            // if not provided or `undefined`, all pages will have feed reference inserted
+            match: "^/blog/",
+          },
+        ],
       },
     },
+    "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-emotion",
     "gatsby-plugin-theme-ui",
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // "gatsby-plugin-offline",
+    "@chakra-ui/gatsby-plugin",
   ],
 }

@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "rebass"
+import { Box } from "@chakra-ui/react"
 
 const Tag = ({ children, ...boxProps }) => {
   return (

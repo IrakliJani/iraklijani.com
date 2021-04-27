@@ -1,17 +1,20 @@
 import React from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
-import { Box, Heading, Text, Link } from "rebass"
+import { Box, Heading, Text, Link } from "@chakra-ui/react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import Tag from "../components/Tag"
+import Bio from "../components/Bio"
 
 const BlogIndex = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location}>
-      <SEO title="All posts" />
+      <Seo title="All posts" />
+
+      <Bio />
 
       {posts.map(({ node }) => {
         const slug = node.fields.slug

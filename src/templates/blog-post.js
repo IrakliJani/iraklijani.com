@@ -1,9 +1,9 @@
 import React from "react"
 import { navigate, graphql } from "gatsby"
-import { Flex, Box, Link, Heading, Text } from "rebass"
+import { Flex, Box, Link, Heading, Text } from "@chakra-ui/react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/Seo"
 import Tag from "../components/Tag"
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -17,7 +17,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
 
   return (
     <Layout location={location}>
-      <SEO title={title} description={description} />
+      <Seo title={title} description={description} />
 
       <Box as="article" mb={3}>
         <Box as="header">

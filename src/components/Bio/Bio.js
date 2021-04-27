@@ -1,6 +1,6 @@
 import React from "react"
-import { useStaticQuery } from "gatsby"
-import { Flex, Box, Heading, Text, Link } from "rebass"
+import { useStaticQuery, graphql } from "gatsby"
+import { Box, Heading, Text, Link } from "@chakra-ui/react"
 
 import Avatar from "./../Avatar"
 

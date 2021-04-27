@@ -85,12 +85,12 @@ export const prismStyles = {
     fontSize: [0, 1, 2, 2],
     fontFamily: "mono",
     color: COLORS.white,
-    background: "#011627",
+    background: COLORS.black,
     overflow: "visible",
     WebkitOverflowScrolling: "touch",
   },
   ".gatsby-highlight-code-line": {
-    backgroundColor: hex2rgba(COLORS.white, 0.075),
+    backgroundColor: hex2rgba(COLORS.white, 0.1),
     display: "block",
     mx: contentBounds.map((n) => -n),
     px: contentBounds,
@@ -136,7 +136,7 @@ export const prismStyles = {
   },
   ":not(pre)>code[class*=language-],pre[class*=language-]": {
     color: "#fff",
-    background: "#011627",
+    background: COLORS.black,
   },
   ":not(pre)>code[class*=language-]": {
     padding: ".1em",
@@ -368,7 +368,7 @@ const importedStyles = {
   },
 }
 
-export default {
+const Config = {
   colors: COLORS,
 
   space: [0, 2, 4, 8, 16, 32, 48, 64, 96],
@@ -405,3 +405,5 @@ export default {
 
   markdown: importedStyles.markdown,
 }
+
+export default Config

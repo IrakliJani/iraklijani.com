@@ -1,6 +1,5 @@
 import React from "react"
-import { Global } from "@emotion/core"
-import { Box } from "rebass"
+import { Box } from "@chakra-ui/react"
 
 import Header from "./../components/Header"
 import Footer from "./../components/Footer"
@@ -8,7 +7,7 @@ import Footer from "./../components/Footer"
 const Layout = ({ children, showHeader = true, showFooter = true }) => {
   return (
     <>
-      <Global styles={globalCSS} />
+      {/* <Global styles={globalCss} /> */}
 
       <Box height="2px" backgroundColor="black" />
 
@@ -27,18 +26,18 @@ const Layout = ({ children, showHeader = true, showFooter = true }) => {
   )
 }
 
-const globalCSS = (theme) => ({
-  "::selection": {
-    backgroundColor: theme.colors.selection,
-  },
-  html: {
-    backgroundColor: theme.colors.black,
-  },
-  body: {
-    minHeight: "100vh",
-    backgroundColor: theme.colors.white,
-    lineHeight: theme.lineHeight.body,
-  },
-})
+// const globalCss = (theme) => ({
+//   "::selection": {
+//     backgroundColor: theme.colors.selection,
+//   },
+//   html: {
+//     backgroundColor: theme.colors.black,
+//   },
+//   body: {
+//     minHeight: "100vh",
+//     backgroundColor: theme.colors.white,
+//     lineHeight: theme.lineHeight.body,
+//   },
+// })
 
 export default Layout
