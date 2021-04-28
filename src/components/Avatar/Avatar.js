@@ -7,7 +7,6 @@ const Avatar = () => {
   return <GatsbyImage image={getImage(avatar.file)} alt="avatar" />
 }
 
-// ,
 const AVATAR_QUERY = graphql`
   {
     file(absolutePath: { regex: "/me.jpeg/" }) {

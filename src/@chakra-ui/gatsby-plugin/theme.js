@@ -1,3 +1,4 @@
+import { extendTheme } from "@chakra-ui/react"
 import hex2rgba from "hex2rgba"
 
 const COLORS = {
@@ -368,42 +369,46 @@ const importedStyles = {
   },
 }
 
-const Config = {
-  colors: COLORS,
-
-  space: [0, 2, 4, 8, 16, 32, 48, 64, 96],
-  sizes: [0, 8, 16, 24, 32, 48, 64, 96, 128, 192],
-
-  fontSizes: [12, 14, 16, 18, 20, 24, 32, 48],
-  fonts: {
-    heading: "SpaceGrotesk",
-    body: "HKGrotesk",
-  },
-
-  heading: {
-    color: "black",
-    fontWeight: 600,
-  },
-  lineHeight: {
-    body: "normal",
-    heading: "normal",
-  },
-
-  variants: {
-    contentWrapper: {
-      maxWidth: "1190px",
-      mx: "auto",
-      px: contentBounds,
+const theme = {
+  styles: {
+    global: {
+      "::selection": {
+        backgroundColor: "selection",
+      },
+      html: {
+        backgroundColor: "black",
+      },
+      body: {
+        minHeight: "100vh",
+        backgroundColor: "white",
+      },
     },
   },
-
-  link: importedStyles.link,
-  linkNoUnderline: {
-    ...importedStyles.link,
-    borderBottomWidth: "0px",
-  },
-
-  markdown: importedStyles.markdown,
+  // colors: COLORS,
+  // space: [0, 2, 4, 8, 16, 32, 48, 64, 96],
+  // sizes: [0, 8, 16, 24, 32, 48, 64, 96, 128, 192],
+  // fontSizes: [12, 14, 16, 18, 20, 24, 32, 48],
+  // fonts: {
+  //   heading: "SpaceGrotesk",
+  //   body: "HKGrotesk",
+  // },
+  // heading: {
+  //   color: "black",
+  //   fontWeight: 600,
+  // },
+  // variants: {
+  //   contentWrapper: {
+  //     maxWidth: "1190px",
+  //     mx: "auto",
+  //     px: contentBounds,
+  //   },
+  // },
+  // link: importedStyles.link,
+  // linkNoUnderline: {
+  //   ...importedStyles.link,
+  //   borderBottomWidth: "0px",
+  // },
+  // markdown: importedStyles.markdown,
 }
 
-export default Config
+export default extendTheme(theme)

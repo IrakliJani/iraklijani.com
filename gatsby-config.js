@@ -130,7 +130,12 @@ module.exports = {
     },
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-theme-ui",
-    "@chakra-ui/gatsby-plugin",
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        resetCSS: true,
+        portalZIndex: 40,
+      },
+    },
   ],
 }
