@@ -1,4 +1,13 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme, ThemeOverride } from "@chakra-ui/react"
+
+// -webkit-font-smoothing: antialiased;
+// -moz-osx-font-smoothing: grayscale;
+// font-variant-ligatures: none;
+// -webkit-font-feature-settings: "liga" off, "calt" on;
+// font-feature-settings: "liga" off, "calt" on;
+// /* text-rendering: optimizeLegibility; */
+
+/*
 import hex2rgba from "hex2rgba"
 
 const COLORS = {
@@ -409,6 +418,30 @@ const theme = {
   //   borderBottomWidth: "0px",
   // },
   // markdown: importedStyles.markdown,
+}
+
+*/
+
+const theme: ThemeOverride = {
+  config: {
+    cssVarPrefix: "c",
+  },
+  components: {
+    Link: {
+      baseStyle: {
+        textDecoration: "none",
+        borderBottomWidth: "1px",
+        borderBottomStyle: "solid",
+        borderBottomColor: "transparent",
+
+        _hover: {
+          textDecoration: "none",
+          backgroundColor: "gray.300",
+          borderBottomColor: "gray.700",
+        },
+      },
+    },
+  },
 }
 
 export default extendTheme(theme)

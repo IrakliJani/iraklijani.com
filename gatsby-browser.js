@@ -1,1 +1,1 @@
-import "@fontsource/jetbrains-mono.css"
+import "@fontsource/jetbrains-mono"
