@@ -1,1 +1,1 @@
-import "./src/css/typography.css"
+import "@fontsource/jetbrains-mono.css"
