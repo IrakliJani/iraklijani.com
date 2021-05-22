@@ -1,11 +1,12 @@
-import React from "react"
+import * as React from "react"
+import { PageProps } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/Seo"
 
-const NotFoundPage = ({ location }) => {
+const NotFoundPage: React.FC<PageProps> = () => {
   return (
-    <Layout location={location}>
+    <Layout>
       <Seo title="404: Not Found" />
 
       <h1>Not Found</h1>
