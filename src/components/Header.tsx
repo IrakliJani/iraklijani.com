@@ -31,16 +31,16 @@ const Header: React.FC = () => {
   const { author } = data.site.siteMetadata
 
   return (
-    <Box as="header" backgroundColor="black" color="white">
+    <Box as="header" backgroundColor="black">
       <Container as="nav">
-        <Flex height={14} alignItems="center">
+        <Flex height={16} alignItems="center">
           <Link as={GatsbyLink} to="/" fontWeight="bold" color="white">
             {author.name}
           </Link>
 
           <Spacer />
 
-          <Link as={GatsbyLink} to="/blog">
+          <Link as={GatsbyLink} to="/blog" color="white">
             Blog
           </Link>
         </Flex>

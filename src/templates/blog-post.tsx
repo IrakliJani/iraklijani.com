@@ -1,6 +1,6 @@
 import * as React from "react"
 import { navigate, graphql, PageProps } from "gatsby"
-import { Flex, Box, Link, Heading, Text, Tag } from "@chakra-ui/react"
+import { Flex, Box, Heading, Text, Tag, LinkBox, LinkOverlay } from "@chakra-ui/react"
 
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
@@ -64,16 +64,16 @@ const BlogPostTemplate: React.FC<PageProps<PageQueryResult, PageContext>> = ({ d
     <Layout>
       <Seo title={title} description={description} />
 
-      <Box as="article" mb={3}>
+      <Box as="article" marginBottom={3}>
         <Box as="header" textAlign="center">
-          <Heading as="h1" fontSize={["x-large", "xx-large"]} mb={3}>
+          <Heading as="h1" fontSize="5xl" marginBottom={3}>
             {title}
           </Heading>
 
           <Tag>{date}</Tag>
         </Box>
 
-        <Text as="section" pt={4} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
+        <Text as="section" paddingTop={4} variant="markdown" dangerouslySetInnerHTML={{ __html: postHTML }} />
       </Box>
 
       <PageNavigation prev={prev} next={next} />
@@ -93,7 +93,7 @@ const PageNavigation: React.FC<PageNavigationProps> = ({ prev, next }) => {
     <Flex as="nav" flexDirection="row">
       <Box width="50%">{prev && <NavigationLink post={prev} prefix="← " />}</Box>
 
-      {prev && next ? <Box width="1px" bg="black" opacity={0.25} /> : null}
+      {prev && next ? <Box width="1px" backgroundColor="black" opacity={0.25} /> : null}
 
       <Box width="50%">{next && <NavigationLink post={next} suffix=" →" />}</Box>
     </Flex>
@@ -108,21 +108,13 @@ interface NavigationLinkProps {
 
 const NavigationLink: React.FC<NavigationLinkProps> = ({ prefix, post, suffix }) => {
   return (
-    <Link
-      display="block"
-      px={6}
-      py={5}
-      onClick={() => navigate(post.node.frontmatter.path)}
-      cursor="pointer"
-      userSelect="none"
-      borderRadius="none"
-    >
+    <LinkBox paddingX={6} paddingY={5} cursor="pointer" userSelect="none" borderRadius="none">
       {prefix}
 
-      {post.node.frontmatter.title}
+      <LinkOverlay onClick={() => navigate(post.node.frontmatter.path)}>{post.node.frontmatter.title}</LinkOverlay>
 
       {suffix}
-    </Link>
+    </LinkBox>
   )
 }
 

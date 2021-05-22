@@ -41,14 +41,14 @@ interface SeoProps {
   description?: string
   lang?: string
   meta?: MetaProp[]
-  title: string
+  title?: string
 }
 
 const Seo: React.FC<SeoProps> = ({ description, lang, meta: extraMeta, title }) => {
   const { site } = useStaticQuery<QueryResult>(SITE_QUERY)
 
+  const fullTitle = title ? `${title} | ${site.siteMetadata.title}` : site.siteMetadata.title
   const metaDescription = description || site.siteMetadata.description
-
   const meta = [
     {
       name: `viewport`,
@@ -60,7 +60,7 @@ const Seo: React.FC<SeoProps> = ({ description, lang, meta: extraMeta, title }) 
     },
     {
       property: `og:title`,
-      content: title,
+      content: fullTitle,
     },
     {
       property: `og:description`,
@@ -80,7 +80,7 @@ const Seo: React.FC<SeoProps> = ({ description, lang, meta: extraMeta, title }) 
     },
     {
       name: `twitter:title`,
-      content: title,
+      content: fullTitle,
     },
     {
       name: `twitter:description`,
@@ -88,14 +88,7 @@ const Seo: React.FC<SeoProps> = ({ description, lang, meta: extraMeta, title }) 
     },
   ]
 
-  return (
-    <Helmet
-      htmlAttributes={{ lang }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={extraMeta !== undefined ? meta.concat(extraMeta) : meta}
-    />
-  )
+  return <Helmet htmlAttributes={{ lang }} title={fullTitle} meta={extraMeta ? meta.concat(extraMeta) : meta} />
 }
 
 Seo.defaultProps = {

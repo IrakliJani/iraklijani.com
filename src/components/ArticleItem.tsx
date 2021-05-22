@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link as GatsbyLink } from "gatsby"
-import { Box, Heading, Text, Link, Tag } from "@chakra-ui/react"
+import { Box, Heading, Text, Link, Divider, Badge } from "@chakra-ui/react"
 
 interface ArticleItemProps {
   path: string
@@ -11,18 +11,20 @@ interface ArticleItemProps {
 
 const ArticleItem: React.FC<ArticleItemProps> = ({ path, title, date, descriptionHTML }) => {
   return (
-    <Box as="article" mb={5}>
-      <Box as="header">
-        <Heading fontSize="large" mb={3}>
-          <Link as={GatsbyLink} to={path}>
-            {title}
-          </Link>
-        </Heading>
+    <Box as="article">
+      <Divider marginBottom={3} />
 
-        <Tag bg="">{date}</Tag>
-      </Box>
+      <Heading as="h4" fontSize="large" marginBottom={2}>
+        <Link as={GatsbyLink} to={path}>
+          {title}
+        </Link>
+      </Heading>
 
-      <Text as="section" pt={4} dangerouslySetInnerHTML={{ __html: descriptionHTML }} />
+      <Badge backgroundColor="yellow.50" marginBottom={3}>
+        {date}
+      </Badge>
+
+      <Text as="section" dangerouslySetInnerHTML={{ __html: descriptionHTML }} marginBottom={3} />
     </Box>
   )
 }

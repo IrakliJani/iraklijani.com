@@ -1,6 +1,6 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Box, Text } from "@chakra-ui/react"
+import { Box, Divider, Text } from "@chakra-ui/react"
 
 interface QueryResult {
   site: {
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
 
   return (
     <Box as="footer">
-      <Box height="1px" mb={4} backgroundColor="black" opacity={1 / 3} />
+      <Divider marginBottom={4} />
 
       <Text fontSize="sm">
         © {startYear === currentYear ? currentYear : `${startYear}-${currentYear}`} {author.name}

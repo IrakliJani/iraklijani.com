@@ -13,7 +13,7 @@ const Layout: React.FC<LayputProps> = ({ children }) => {
     <>
       <Header />
 
-      <Box as="main" py={7} overflow="hidden">
+      <Box as="main" paddingY={7}>
         <Container>
           {children}
 

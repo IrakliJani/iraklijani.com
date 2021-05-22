@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import Bio from "../components/Bio"
 import ArticleItem from "../components/ArticleItem"
+import { Heading } from "@chakra-ui/layout"
 
 type PostNode = {
   node: {
@@ -61,16 +62,22 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title="All posts" />
+      <Seo />
 
       <Bio />
 
-      {posts.map(({ node }) => {
-        const slug = node.fields.slug
-        const { path, title, date, description } = node.frontmatter
-        const descriptionHTML = description || node.excerpt
+      <Heading as="h3" fontSize="x-large" textAlign="center" marginBottom={4}>
+        Recent Blogs
+      </Heading>
 
-        return <ArticleItem key={slug} path={path} title={title} date={date} descriptionHTML={descriptionHTML} />
+      {posts.map((post) => {
+        return (
+          <ArticleItem
+            key={post.node.fields.slug}
+            descriptionHTML={post.node.frontmatter.description || post.node.excerpt}
+            {...post.node.frontmatter}
+          />
+        )
       })}
     </Layout>
   )

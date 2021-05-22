@@ -48,15 +48,15 @@ const Bio: React.FC = () => {
 
   return (
     <Box>
-      <Heading as="h2" fontSize={["x-large", "xx-large"]}>
+      <Heading as="h2" fontSize="xx-large">
         {author.name}
       </Heading>
 
-      <Heading as="h3" fontSize={["medium", "large"]} fontWeight="normal">
+      <Heading as="h3" fontSize="large" fontWeight="normal">
         {author.title}
       </Heading>
 
-      <Text as="section" variant="markdown" py={[4, 5]}>
+      <Text as="section" paddingY={5}>
         {author.bio}
 
         <Box height={3} />
